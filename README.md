@@ -1,2 +1,8 @@
 # Tutok-Covid
-Tutok COVID => Covid-19 Tracker
+a Philippines Covid-19 Tracker
+
+## Tech Used
+SASS
+ChartJS
+HTML
+JavaScript
