@@ -1,0 +1,104 @@
+@media only screen and (max-width: 480px) {
+  .hero-container {
+    header {
+      margin-bottom: 1em !important;
+    }
+    .summary-container {
+      h1 {
+        font-size: 1.5em !important;
+      }
+      .summary {
+        flex-direction: column;
+        .box {
+          width: 100% !important;
+          height: 120px !important;
+          margin-bottom: 0.5em;
+        }
+        .info,
+        .title {
+          padding: 5px;
+        }
+      }
+    }
+    .chart-container {
+      flex-direction: column;
+      .chart {
+        padding: 0;
+      }
+    }
+  }
+
+  .overview-container {
+    .overview {
+      padding: 0;
+      flex-direction: column;
+      .world,
+      .phil {
+        margin: 0;
+        width: 100%;
+      }
+      .world {
+        margin-bottom: 0.5em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .hero-container {
+    .chart-container {
+      flex-direction: column;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-container {
+    header {
+      margin-bottom: 0.5em;
+    }
+    .summary-container {
+      h1 {
+        margin-bottom: 0.5em;
+      }
+    }
+    .summary {
+      .box {
+        width: 220px !important;
+        height: 160px !important;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1366px) {
+  body {
+    padding: 0 1em;
+  }
+
+  .hero-container {
+    height: auto;
+    padding-top: 1em;
+    header {
+      height: auto;
+      .ltitle {
+        font-size: 1.4em !important;
+      }
+      .date {
+        font-size: smaller !important;
+      }
+    }
+    .summary-container {
+      height: auto;
+      h1 {
+        font-size: 2em;
+      }
+    }
+    .chart-container {
+      height: auto;
+      .chart {
+        height: 300px !important;
+      }
+    }
+  }
+}

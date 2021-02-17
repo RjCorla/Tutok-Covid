@@ -1,0 +1,18 @@
+@import './variables';
+@import './mixin';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $dark;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 1.5em;
+}
+
+a {
+  text-decoration: none;
+}

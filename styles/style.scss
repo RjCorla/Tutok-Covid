@@ -1,0 +1,445 @@
+@import './root';
+
+/* HERO CONTAINER */
+.hero-container {
+  width: 100%;
+  height: 100vh;
+  padding-top: 1em;
+  /*HEADER*/
+  header {
+    @include flex(space-between);
+    width: 100%;
+    height: 10%;
+    .logo {
+      @include flex(space-between);
+      svg {
+        margin-right: 0.5em;
+        cursor: pointer;
+        #small-one,
+        #small-three {
+          animation: small 5s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        #small-two {
+          animation: smallReverse 5s linear infinite;
+          transform-origin: center;
+          transform-box: fill-box;
+        }
+        #big-one {
+          animation: bigOne 3s ease-in-out infinite alternate;
+          transform-origin: center;
+        }
+      }
+      .logo-title {
+        color: $light;
+        @include flex(space-between);
+        flex-direction: column;
+        line-height: 22px;
+        .ltitle {
+          font-family: 'Yusei Magic', sans-serif;
+          font-size: 1.8em;
+          font-weight: bold;
+        }
+        .date {
+          font-size: small;
+          opacity: 0.7;
+        }
+      }
+    }
+    .header-icon {
+      @include flex(space-between);
+      a {
+        margin-left: 1em;
+        img {
+          transition: 0.5s;
+          &:hover {
+            transform: translateY(-8px);
+          }
+        }
+        i {
+          font-size: 32px;
+          transition: 0.5s;
+          color: $light;
+          &:hover {
+            transform: translateY(-8px);
+          }
+        }
+      }
+    }
+  }
+  /*SUMMARY*/
+  .summary-container {
+    width: 100%;
+    height: 40%;
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: $text-color-light;
+      margin-bottom: 1em;
+      letter-spacing: 1px;
+    }
+    .summary {
+      @include flex(space-around);
+      height: auto;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      .title,
+      .info {
+        width: 100%;
+        line-height: 1em;
+        padding: 10px;
+        text-align: center;
+      }
+      .box {
+        @include flex(space-between);
+        flex-direction: column;
+        width: 300px;
+        height: 180px;
+        max-height: 200px;
+        .title {
+          border-radius: 8px 8px 0 0;
+          color: $text-color-dark;
+        }
+        .info {
+          border-radius: 0 0 8px 8px;
+          color: $text-color-dark;
+        }
+        .data {
+          @include flex-center;
+          flex-direction: column;
+          color: $light;
+          width: 100%;
+          height: 100%;
+          .today {
+            font-size: small;
+            opacity: 0.5;
+          }
+        }
+      }
+      .casesBox {
+        .title,
+        .info {
+          background: $blue;
+        }
+        .data {
+          border-left: 2px solid $blue;
+          border-right: 2px solid $blue;
+        }
+      }
+      .deathBox {
+        .title,
+        .info {
+          background: $red;
+        }
+        .data {
+          border-left: 2px solid $red;
+          border-right: 2px solid $red;
+        }
+      }
+      .recoveredBox {
+        .title,
+        .info {
+          background: $green;
+        }
+        .data {
+          border-left: 2px solid $green;
+          border-right: 2px solid $green;
+        }
+      }
+    }
+  }
+  /*CHART*/
+  .chart-container {
+    width: 100%;
+    height: 50%;
+    @include flex(space-between);
+    .chart-container-one,
+    .chart-container-two {
+      padding: 0.5em;
+    }
+  }
+}
+
+@import './keyframes';
+
+/* OVERVIEW */
+.overview-container {
+  .region {
+    width: 100%;
+    height: auto;
+    margin: 2em 0;
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+      text-align: center;
+      color: $text-color-light;
+      letter-spacing: 1px;
+    }
+    .top-region {
+      width: 100%;
+      height: auto;
+      border-collapse: collapse;
+      th,
+      td {
+        border: 1px solid $light;
+        padding: 8px;
+      }
+      th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background: $blue;
+      }
+      td {
+        color: $light;
+      }
+      tr {
+        transition: 0.1s;
+        &:nth-child(odd) {
+          background: $table-bg;
+        }
+        &:hover {
+          background: $green;
+        }
+      }
+    }
+    .source {
+      margin-top: 0.5em;
+      @include flex-center;
+      flex-direction: column;
+      color: $light;
+      a {
+        text-decoration: none;
+        color: $light;
+        transition: 0.1s;
+        font-size: small;
+        &:hover {
+          color: $red;
+        }
+      }
+      .last-update {
+        font-size: x-small;
+        opacity: 0.5;
+      }
+    }
+  }
+  .overview {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+    color: $light;
+    padding: 1em;
+    .world,
+    .phil {
+      width: 50%;
+      border: 1px solid $light;
+      padding-bottom: 0.5em;
+      h2 {
+        text-align: center;
+        background: $blue;
+        color: $text-color-dark;
+        padding: 8px;
+        margin-bottom: 0.5em;
+        letter-spacing: 1px;
+      }
+      p {
+        @include flex(space-between);
+        padding: 0 0.5em;
+        transition: 0.1s;
+        line-height: 1.5em;
+        &:hover {
+          color: $text-color-light;
+        }
+        span {
+          opacity: 0.6;
+        }
+      }
+    }
+    .world {
+      margin-right: 0.8em;
+    }
+    .phil {
+      margin-left: 0.8em;
+    }
+  }
+}
+
+/* SEARCH */
+.search-container {
+  width: 100;
+  height: auto;
+  margin-bottom: 2em;
+  @include flex(space-between);
+  flex-direction: column;
+  h6 {
+    color: $light;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+    .open-search {
+      cursor: pointer;
+      text-decoration: underline;
+      &:hover {
+        color: $blue;
+      }
+    }
+  }
+  form {
+    width: 100%;
+    max-width: 500px;
+    @include flex-center;
+    display: none;
+    margin-bottom: 1em;
+    input {
+      width: 100%;
+    }
+    input,
+    button {
+      padding: 0.3em;
+      font-size: 1em;
+      outline: none;
+      border: 1px solid $text-color-dark;
+      background: transparent;
+      color: $text-color-light;
+    }
+    button {
+      background: $blue;
+      color: $text-color-dark;
+      cursor: pointer;
+      width: 50px;
+      i {
+        transition: 0.5s;
+        transform: scale(0.9);
+      }
+      &:hover i,
+      &:focus i {
+        transform: scale(1);
+      }
+    }
+  }
+  .search {
+    width: 100%;
+    height: auto;
+    @include flex-center;
+    .error {
+      width: 100%;
+      height: auto;
+      background: $red;
+      padding: 0.5em;
+      font-size: smaller;
+      color: $light;
+      line-height: 12px;
+      @include flex-center;
+    }
+    .searchSummary {
+      width: 100%;
+      max-width: 700px;
+      color: $light;
+      border: 1px solid $light;
+      padding-bottom: 0.5em;
+      h3 {
+        text-align: center;
+        font-size: 1.5em;
+        color: #000;
+        background: $blue;
+        padding: 0.5em;
+        margin-bottom: 0.5em;
+      }
+      p {
+        display: flex;
+        justify-content: space-between;
+        transition: 0.1s;
+        padding: 0 0.5em;
+        line-height: 1.5em;
+        span {
+          opacity: 0.6;
+        }
+        &:hover {
+          color: $text-color-light;
+        }
+      }
+    }
+  }
+}
+
+/* FOOTER */
+.social-container {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1em;
+  padding: 2em;
+  .middle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    .btn {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      background: $dark;
+      margin: 10px;
+      border-radius: 30%;
+      box-shadow: 0 5px 15px -5px #00000070;
+      color: $blue;
+      overflow: hidden;
+      position: relative;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i {
+        font-size: 26px;
+        transition: 0.2s linear;
+      }
+      &:hover i {
+        transform: scale(1.3);
+        z-index: 1;
+      }
+      &:hover .fb {
+        color: darkblue; //#1261A0;
+      }
+      &:hover .google {
+        color: $red; //#ea4335;
+      }
+      &:hover .codepen {
+        color: black;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        background: $blue;
+        transform: rotate(45deg);
+        left: -110%;
+        top: 90%;
+      }
+      &:hover::before {
+        animation: social 0.7s 1;
+        top: -10%;
+        left: -10%;
+      }
+    }
+  }
+}
+
+/* COPY */
+.copy {
+  padding: 1em auto;
+  margin-bottom: 0.5em;
+  @include flex-center;
+  p {
+    font-size: small;
+    letter-spacing: 1px;
+    color: #fff;
+    opacity: 0.5;
+  }
+}
+
+@import './media';
