@@ -266,7 +266,7 @@ const overview = (ph, world) => {
       <p><span>Total Cases: </span><strong>${formatNumber(
         world.cases
       )}</strong></p>
-      <p><span>Total Death: </span><strong>${formatNumber(
+      <p><span>Total Deaths: </span><strong>${formatNumber(
         world.deaths
       )}</strong></p>
       <p><span>Recovered: </span><strong>${formatNumber(
@@ -288,7 +288,7 @@ const overview = (ph, world) => {
     )}</strong></p>
     <p><span>Critical: </span><strong>${formatNumber(ph.critical)}</strong></p>
     <p><span>Total Cases: </span><strong>${formatNumber(ph.cases)}</strong></p>
-    <p><span>Total Death: </span><strong>${formatNumber(ph.deaths)}</strong></p>
+    <p><span>Total Deaths: </span><strong>${formatNumber(ph.deaths)}</strong></p>
     <p><span>Recovered: </span><strong>${formatNumber(
       ph.recovered
     )}</strong></p>
